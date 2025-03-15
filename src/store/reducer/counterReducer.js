@@ -3,12 +3,12 @@ const initial = {
   counter: 0,
 };
 
-export const counterReducer = (state = initial, acton) => {
-  switch (acton.type) {
-    case "increament":
+export const counterReducer = (state = initial, action) => {
+  switch (action.type) {
+    case "increment":
       return { counter: state.counter + 1 };
     case "decrement":
-      return { counter: state.counter - 1 };
+      return state.counter > 0 ? { counter: state.counter - 1 } : state;
     default:
       return state;
   }

@@ -2,18 +2,19 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function App() {
-  const store = useSelector((state) => state);
+  const count = useSelector((state) => state.counter.counter);
   const dispatch = useDispatch();
   const increament = () => {
-    dispatch({ type: "increament" });
+    dispatch({ type: "increment" });
   };
   const decrement = () => {
     dispatch({ type: "decrement" });
   };
+
   return (
     <div>
       <button onClick={increament}>+</button>
-      <h1>{state.store}</h1>
+      <h1>San:{count}</h1>
       <button onClick={decrement}>-</button>
     </div>
   );
