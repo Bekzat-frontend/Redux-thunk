@@ -7,10 +7,10 @@ const initial = {
 export const counterReducer = (state = initial, action) => {
   switch (action.type) {
     case INCREMENT:
-      return { counter: state.counter + payload.payload };
+      return { counter: state.counter + action.payload };
     case DECREMENT:
       return state.counter > 0
-        ? { counter: state.counter - payload.payload }
+        ? { counter: state.counter - action.payload }
         : state;
     default:
       return state;
